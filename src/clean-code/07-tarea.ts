@@ -38,7 +38,19 @@
 
     //? Idea para la nueva clase InputElement
 
-    const nameField = new InputEvents(
+    class InputElement {
+        public html: HtmlElement;
+        public attributes: InputAttributes;
+        public events: InputEvents;
+
+        constructor(value: string, placeholder: string, id: string) {
+            this.html = new HtmlElement(id, "input");
+            this.attributes = new InputAttributes(value, placeholder);
+            this.events = new InputEvents();
+        }
+    }
+
+    const nameField = new InputElement(
         "Fernando",
         "Enter first name",
         "txtName"
